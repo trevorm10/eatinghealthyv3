@@ -1,3 +1,5 @@
+@file:Suppress("NAME_SHADOWING")
+
 package com.example.eatingplanv3
 
 import android.os.Bundle
@@ -26,9 +28,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
-class EatingPlanV2Theme(function: () -> Unit) {
 
-}
+
+
+
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -74,7 +78,7 @@ fun HealthyEatingApp() {
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
-            .background(Color(0xFFE0F7FA)), // Light cyan background
+            .background(Color(0xFF0000FF)), // the colour of the background
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         // Image at the top with a healthy eating theme
@@ -89,7 +93,10 @@ fun HealthyEatingApp() {
         Spacer(modifier = Modifier.height(16.dp))
         TextField(
             value = timeOfDay,
-            onValueChange = { timeOfDay = it },
+            onValueChange = {
+                val it = ""
+                timeOfDay = it
+            },
             label = { Text("Enter time of day meal (e.g., Breakfast, Mid Morning Snack, Lunch, Afternoon Snack, Dinner, After Dinner Snack)") }
         )
 
@@ -124,4 +131,3 @@ fun HealthyEatingApp() {
 fun PreviewHealthyEatingApp() {
     HealthyEatingApp()
 }
-
