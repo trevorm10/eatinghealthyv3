@@ -25,6 +25,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
@@ -122,9 +123,20 @@ fun HealthyEatingApp() {
 
         meals.forEach { meal ->
             Text(meal)
+
+            Spacer(modifier = Modifier.weight(1f)) // the catch phrase at the bottom
+
+            // using red bold red text
+            Text(
+                text = "THE FIRST STEP TO A HEALTHY LIFE IS TO MAKE THE RIGHT CHOICE",
+                color = Color.Red,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
         }
     }
-}
+        }
+
 
 @Preview(showBackground = true)
 @Composable
