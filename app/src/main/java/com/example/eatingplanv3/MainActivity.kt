@@ -26,6 +26,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 
 class MainActivity : ComponentActivity() {
@@ -125,8 +126,10 @@ fun HealthyEatingApp() {
             text = "THE FIRST STEP TO A HEALTHY LIFE IS TO MAKE THE RIGHT CHOICE",
             color = Color.Yellow,
             fontWeight = FontWeight.Bold,
+            fontSize = 17.sp, // Set the font size to 16
             modifier = Modifier.align(Alignment.CenterHorizontally)
         )
+
     }
 }
 
