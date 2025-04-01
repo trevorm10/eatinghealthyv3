@@ -117,7 +117,10 @@ fun HealthyEatingApp() {
 
         meals.forEach { meal ->
             Text(meal)
-            Spacer(modifier = Modifier.height(4.dp)) // spacing for meals
+            30.sp
+            FontWeight.Bold
+
+            Spacer(modifier = Modifier.height(30.dp)) // spacing for meals
         }
 
         // Display catchphrase only once
