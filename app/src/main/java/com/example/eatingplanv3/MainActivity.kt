@@ -123,7 +123,7 @@ fun HealthyEatingApp() {
         Spacer(modifier = Modifier.weight(1f)) // This will hold the catchphrase at the bottom
         Text(
             text = "THE FIRST STEP TO A HEALTHY LIFE IS TO MAKE THE RIGHT CHOICE",
-            color = Color.Red,
+            color = Color.Yellow,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.align(Alignment.CenterHorizontally)
         )
