@@ -1,5 +1,3 @@
-@file:Suppress("NAME_SHADOWING")
-
 package com.example.eatingplanv3
 
 import android.os.Bundle
@@ -30,11 +28,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 
-
-
-
-
-
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +36,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
 @Composable
 fun HealthyEatingApp() {
     var timeOfDay by remember { mutableStateOf("") }
@@ -79,10 +71,10 @@ fun HealthyEatingApp() {
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
-            .background(Color(0xFF0000FF)), // the colour of the background
+            .background(Color(0xFF0000FF)), // added  colour to the background of the app
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Image at the top with a healthy eating theme
+        // added an image at the top of the app with a healthy eating theme
         Image(
             painter = painterResource(id = R.drawable.healthy),
             contentDescription = "Healthy Eating Theme",
@@ -95,23 +87,24 @@ fun HealthyEatingApp() {
         TextField(
             value = timeOfDay,
             onValueChange = {
-                val it = ""
                 timeOfDay = it
             },
             label = { Text("Enter time of day meal (e.g., Breakfast, Mid Morning Snack, Lunch, Afternoon Snack, Dinner, After Dinner Snack)") }
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         Button(onClick = {
-            meals = mealOptions[timeOfDay] ?: listOf("Invalid input! Please enter a valid meal time.eg.,  Breakfast, Mid Morning Snack, Lunch, Afternoon Snack, Dinner, After Dinner Snack)")
+            meals = mealOptions[timeOfDay]
+                ?: listOf("Invalid input! Please enter a valid meal time.eg.,  Breakfast, Mid Morning Snack, Lunch, Afternoon Snack, Dinner, After Dinner Snack)")
         }) {
             Text("Get Meal Suggestions")
         }
 
+
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Clear Button
+        // add clear a button
         Button(onClick = {
             timeOfDay = ""
             meals = emptyList()
@@ -123,19 +116,21 @@ fun HealthyEatingApp() {
 
         meals.forEach { meal ->
             Text(meal)
-
-            Spacer(modifier = Modifier.weight(1f)) // the catch phrase at the bottom
-
-            // using red bold red text
-            Text(
-                text = "THE FIRST STEP TO A HEALTHY LIFE IS TO MAKE THE RIGHT CHOICE",
-                color = Color.Red,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier.align(Alignment.CenterHorizontally)
-            )
+            Spacer(modifier = Modifier.height(4.dp)) // spacing for meals
         }
+
+        // Display catchphrase only once
+        Spacer(modifier = Modifier.weight(1f)) // This will hold the catchphrase at the bottom
+        Text(
+            text = "THE FIRST STEP TO A HEALTHY LIFE IS TO MAKE THE RIGHT CHOICE",
+            color = Color.Red,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.align(Alignment.CenterHorizontally)
+        )
     }
-        }
+}
+
+
 
 
 @Preview(showBackground = true)
@@ -143,3 +138,5 @@ fun HealthyEatingApp() {
 fun PreviewHealthyEatingApp() {
     HealthyEatingApp()
 }
+
+
