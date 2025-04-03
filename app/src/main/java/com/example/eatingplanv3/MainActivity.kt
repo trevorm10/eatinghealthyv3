@@ -42,7 +42,7 @@ fun HealthyEatingApp() {
     var timeOfDay by remember { mutableStateOf("") }
     var meals by remember { mutableStateOf(listOf<String>()) }
     val mealOptions = mapOf(
-        "breakfast" to listOf(
+        "breakfast" to listOf( // these are the healthy meal suggestions the user can choose from.
             "Option 1: Rolled oats with banana, 2 boiled eggs, black coffee (unsweetened)",
             "Option 2: 2 slices Sourdough toast with Peanut butter, black coffee (unsweetened)"
         ),
@@ -105,7 +105,7 @@ fun HealthyEatingApp() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // add clear a button
+        // added a clear a button
         Button(onClick = {
             timeOfDay = ""
             meals = emptyList()
@@ -113,14 +113,14 @@ fun HealthyEatingApp() {
             Text("Clear")
         }
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(30.dp))
 
         meals.forEach { meal ->
             Text(meal)
             30.sp
             FontWeight.Bold
 
-            Spacer(modifier = Modifier.height(30.dp)) // spacing for meals
+            Spacer(modifier = Modifier.height(30.dp)) // added spacing for meals
         }
 
         // Display catchphrase only once
@@ -129,7 +129,7 @@ fun HealthyEatingApp() {
             text = "THE FIRST STEP TO A HEALTHY LIFE IS TO MAKE THE RIGHT CHOICE",
             color = Color.Yellow,
             fontWeight = FontWeight.Bold,
-            fontSize = 17.sp, // Set the font size to 16
+            fontSize = 17.sp,
             modifier = Modifier.align(Alignment.CenterHorizontally)
         )
 
