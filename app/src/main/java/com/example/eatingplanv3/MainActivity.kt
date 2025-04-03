@@ -23,6 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -90,14 +91,14 @@ fun HealthyEatingApp() {
             onValueChange = {
                 timeOfDay = it
             },
-            label = { Text("Enter time of day meal (e.g., Breakfast, Mid Morning Snack, Lunch, Afternoon Snack, Dinner, After Dinner Snack)") }
+            label = { Text("Enter time of day meal (e.g., Breakfast, Mid Morning Snack, Lunch, Afternoon Snack, Dinner Or After Dinner Snack)") }
         )
 
         Spacer(modifier = Modifier.height(10.dp))
 
         Button(onClick = {
             meals = mealOptions[timeOfDay]
-                ?: listOf("Invalid input! Please enter a valid meal time.eg.,  Breakfast, Mid Morning Snack, Lunch, Afternoon Snack, Dinner, After Dinner Snack)")
+                ?: listOf("Invalid input! Please enter a valid meal time.eg.,  Breakfast, Mid Morning Snack, Lunch, Afternoon Snack, Dinner Or After Dinner Snack")
         }) {
             Text("Get Meal Suggestions")
         }
@@ -116,11 +117,16 @@ fun HealthyEatingApp() {
         Spacer(modifier = Modifier.height(30.dp))
 
         meals.forEach { meal ->
-            Text(meal)
-            30.sp
-            FontWeight.Bold
+            Text(
+                text = meal,
+                style = TextStyle(
+                    color = Color.White,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 20.sp
+                )
+            )
 
-            Spacer(modifier = Modifier.height(30.dp)) // added spacing for meals
+            Spacer(modifier = Modifier.height(30.dp))
         }
 
         // Display catchphrase only once
