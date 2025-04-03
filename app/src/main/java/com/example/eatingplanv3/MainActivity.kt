@@ -98,7 +98,7 @@ fun HealthyEatingApp() {
 
         Button(onClick = {
             meals = mealOptions[timeOfDay]
-                ?: listOf("Invalid input! Please enter a valid meal time.eg.,  Breakfast, Mid Morning Snack, Lunch, Afternoon Snack, Dinner Or After Dinner Snack")
+                ?: listOf("Invalid input! Please enter a valid meal time.eg.,  Breakfast, Mid Morning Snack, Lunch, Afternoon Snack, Dinner OR After Dinner Snack")
         }) {
             Text("Get Meal Suggestions")
         }
